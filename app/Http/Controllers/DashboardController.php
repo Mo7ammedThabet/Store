@@ -11,6 +11,7 @@ class DashboardController extends Controller
     public function index(){
 
         // Return Response : view , josn , redirect , file
-        return view('dashboard');
+        // compact ==> تقوم بارجاع الاريي
+        return view('dashboard.index');
     }
 }
