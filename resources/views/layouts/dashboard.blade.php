@@ -15,7 +15,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
-
+    @stack('styles')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -174,7 +174,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{config('app.name_developer')}}</a>
+          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+          <form action="{{ route('logout') }}" method="post">
+          @csrf
+          <button type="submit" class="btn btn-sm btn-outline-primary ">Logout</button>
+          </form>
         </div>
       </div>
 
