@@ -33,7 +33,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+
+
+
+Route::get('/orders/{order}', [OrdersController::class, 'show'])
+    ->name('orders.show');
+    
+// require __DIR__.'/auth.php';
 
 
 require __DIR__. '/dashboard.php';
